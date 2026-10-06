@@ -1,0 +1,9 @@
+dataset,backbone,original_mse,best_fixed_mse,learned_global_mse,dropoutts_mse
+ILI,TimeFilter,2.619,2.619,2.469,2.461
+ILI,PatchTST,2.956,2.899,2.879,2.874
+ILI,TimeMixer,3.227,3.167,3.217,2.468
+ILI,Informer,7.662,6.569,6.650,6.348
+Exchange Rate,TimeFilter,0.108,0.107,0.106,0.105
+Exchange Rate,PatchTST,0.107,0.108,0.109,0.107
+Exchange Rate,TimeMixer,0.102,0.102,0.101,0.101
+Exchange Rate,Informer,4.383,2.754,2.777,2.078

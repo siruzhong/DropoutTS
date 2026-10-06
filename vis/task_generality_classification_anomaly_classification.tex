@@ -1,0 +1,71 @@
+\begin{table*}[!t]
+    \vspace{-1em}
+    \centering
+    \scriptsize
+    \caption{Classification accuracy (\%) on 32 datasets and six backbones. Shaded +DT cells denote \method and show relative changes from Raw; bold marks the higher accuracy within each pair.}
+    \label{tab:classification_results}
+    \setlength{\tabcolsep}{3.8pt}
+    \renewcommand{\arraystretch}{1.00}
+    \providecommand{\gc}{\tableourscell}
+    \providecommand{\clsraw}[2]{%
+        \ifdim#1pt>#2pt \textbf{#1}\else
+            \ifdim#1pt<#2pt \underline{#1}\else \textbf{#1}\fi
+        \fi
+    }
+    \providecommand{\clsdt}[2]{%
+        \gc
+        \ifdim#2pt>#1pt \textbf{#2}\else
+            \ifdim#2pt<#1pt \underline{#2}\else \textbf{#2}\fi
+        \fi
+        \tableppchange{#1}{#2}%
+    }
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}l *{12}{c}@{}}
+        \toprule
+        \rowcolor{TableHeader}
+        \multirow{2}{*}{\textbf{Dataset}} & \multicolumn{2}{c}{\textbf{iTransformer}} & \multicolumn{2}{c}{\textbf{PatchTST}} & \multicolumn{2}{c}{\textbf{NSFormer}} & \multicolumn{2}{c}{\textbf{TimesNet}} & \multicolumn{2}{c}{\textbf{InceptionTime}} & \multicolumn{2}{c}{\textbf{MiniROCKET}} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11} \cmidrule(lr){12-13}
+        \rowcolor{TableSubheader}
+        & Raw & \tableoursheader +DT & Raw & \tableoursheader +DT & Raw & \tableoursheader +DT & Raw & \tableoursheader +DT & Raw & \tableoursheader +DT & Raw & \tableoursheader +DT \\
+        \midrule
+        \textit{ArticularyWordRecognition} & \clsraw{97.67}{98.00} & \clsdt{97.67}{98.00} & \clsraw{97.33}{97.67} & \clsdt{97.33}{97.67} & \clsraw{97.00}{98.00} & \clsdt{97.00}{98.00} & \clsraw{97.33}{97.67} & \clsdt{97.33}{97.67} & \clsraw{99.00}{99.00} & \clsdt{99.00}{99.00} & \clsraw{96.67}{97.67} & \clsdt{96.67}{97.67} \\
+        \textit{AtrialFibrillation} & \clsraw{33.33}{40.00} & \clsdt{33.33}{40.00} & \clsraw{46.67}{53.33} & \clsdt{46.67}{53.33} & \clsraw{33.33}{40.00} & \clsdt{33.33}{40.00} & \clsraw{33.33}{33.33} & \clsdt{33.33}{33.33} & \clsraw{33.33}{33.33} & \clsdt{33.33}{33.33} & \clsraw{40.00}{40.00} & \clsdt{40.00}{40.00} \\
+        \textit{BasicMotions} & \clsraw{92.50}{95.00} & \clsdt{92.50}{95.00} & \clsraw{67.50}{70.00} & \clsdt{67.50}{70.00} & \clsraw{85.00}{87.50} & \clsdt{85.00}{87.50} & \clsraw{90.00}{90.00} & \clsdt{90.00}{90.00} & \clsraw{25.00}{25.00} & \clsdt{25.00}{25.00} & \clsraw{85.00}{92.50} & \clsdt{85.00}{92.50} \\
+        \textit{CharacterTrajectories} & \clsraw{98.40}{98.61} & \clsdt{98.40}{98.61} & \clsraw{97.84}{97.98} & \clsdt{97.84}{97.98} & \clsraw{98.33}{98.33} & \clsdt{98.33}{98.33} & \clsraw{98.33}{98.54} & \clsdt{98.33}{98.54} & \clsraw{99.79}{99.79} & \clsdt{99.79}{99.79} & \clsraw{96.45}{97.49} & \clsdt{96.45}{97.49} \\
+        \textit{Cricket} & \clsraw{87.50}{88.89} & \clsdt{87.50}{88.89} & \clsraw{84.72}{90.28} & \clsdt{84.72}{90.28} & \clsraw{90.28}{98.61} & \clsdt{90.28}{98.61} & \clsraw{79.17}{84.72} & \clsdt{79.17}{84.72} & \clsraw{98.61}{98.61} & \clsdt{98.61}{98.61} & \clsraw{93.06}{93.06} & \clsdt{93.06}{93.06} \\
+        \textit{DuckDuckGeese} & \clsraw{38.00}{42.00} & \clsdt{38.00}{42.00} & \clsraw{24.00}{26.00} & \clsdt{24.00}{26.00} & \clsraw{24.00}{28.00} & \clsdt{24.00}{28.00} & \clsraw{56.00}{56.00} & \clsdt{56.00}{56.00} & \clsraw{54.00}{60.00} & \clsdt{54.00}{60.00} & \clsraw{24.00}{30.00} & \clsdt{24.00}{30.00} \\
+        \textit{EigenWorms} & \clsraw{47.33}{49.62} & \clsdt{47.33}{49.62} & \clsraw{50.38}{55.73} & \clsdt{50.38}{55.73} & \clsraw{52.67}{56.49} & \clsdt{52.67}{56.49} & \clsraw{38.17}{45.04} & \clsdt{38.17}{45.04} & \clsraw{41.98}{61.83} & \clsdt{41.98}{61.83} & \clsraw{73.28}{73.28} & \clsdt{73.28}{73.28} \\
+        \textit{Epilepsy} & \clsraw{76.81}{78.99} & \clsdt{76.81}{78.99} & \clsraw{83.33}{89.13} & \clsdt{83.33}{89.13} & \clsraw{49.28}{56.52} & \clsdt{49.28}{56.52} & \clsraw{69.57}{73.91} & \clsdt{69.57}{73.91} & \clsraw{95.65}{96.38} & \clsdt{95.65}{96.38} & \clsraw{92.03}{92.03} & \clsdt{92.03}{92.03} \\
+        \textit{EthanolConcentration} & \clsraw{31.56}{34.22} & \clsdt{31.56}{34.22} & \clsraw{28.14}{29.66} & \clsdt{28.14}{29.66} & \clsraw{32.32}{32.32} & \clsdt{32.32}{32.32} & \clsraw{29.66}{31.94} & \clsdt{29.66}{31.94} & \clsraw{33.08}{35.36} & \clsdt{33.08}{35.36} & \clsraw{27.38}{30.42} & \clsdt{27.38}{30.42} \\
+        \textit{ERing} & \clsraw{93.70}{94.07} & \clsdt{93.70}{94.07} & \clsraw{94.07}{94.07} & \clsdt{94.07}{94.07} & \clsraw{93.70}{94.44} & \clsdt{93.70}{94.44} & \clsraw{92.96}{93.33} & \clsdt{92.96}{93.33} & \clsraw{16.67}{33.33} & \clsdt{16.67}{33.33} & \clsraw{82.22}{85.19} & \clsdt{82.22}{85.19} \\
+        \textit{FaceDetection} & \clsraw{67.51}{68.10} & \clsdt{67.51}{68.10} & \clsraw{65.21}{66.06} & \clsdt{65.21}{66.06} & \clsraw{68.67}{68.70} & \clsdt{68.67}{68.70} & \clsraw{66.97}{68.59} & \clsdt{66.97}{68.59} & \clsraw{65.72}{68.08} & \clsdt{65.72}{68.08} & \clsraw{50.28}{51.53} & \clsdt{50.28}{51.53} \\
+        \textit{FingerMovements} & \clsraw{57.00}{62.00} & \clsdt{57.00}{62.00} & \clsraw{55.00}{57.00} & \clsdt{55.00}{57.00} & \clsraw{56.00}{58.00} & \clsdt{56.00}{58.00} & \clsraw{55.00}{61.00} & \clsdt{55.00}{61.00} & \clsraw{60.00}{63.00} & \clsdt{60.00}{63.00} & \clsraw{54.00}{58.00} & \clsdt{54.00}{58.00} \\
+        \textit{HandMovementDirection} & \clsraw{47.30}{52.70} & \clsdt{47.30}{52.70} & \clsraw{56.76}{56.76} & \clsdt{56.76}{56.76} & \clsraw{58.11}{62.16} & \clsdt{58.11}{62.16} & \clsraw{58.11}{59.46} & \clsdt{58.11}{59.46} & \clsraw{43.24}{48.65} & \clsdt{43.24}{48.65} & \clsraw{37.84}{43.24} & \clsdt{37.84}{43.24} \\
+        \textit{Handwriting} & \clsraw{26.59}{27.88} & \clsdt{26.59}{27.88} & \clsraw{25.41}{28.35} & \clsdt{25.41}{28.35} & \clsraw{33.53}{34.71} & \clsdt{33.53}{34.71} & \clsraw{23.29}{24.82} & \clsdt{23.29}{24.82} & \clsraw{64.94}{65.65} & \clsdt{64.94}{65.65} & \clsraw{30.59}{30.59} & \clsdt{30.59}{30.59} \\
+        \textit{Heartbeat} & \clsraw{75.12}{76.10} & \clsdt{75.12}{76.10} & \clsraw{72.20}{72.68} & \clsdt{72.20}{72.68} & \clsraw{72.20}{72.68} & \clsdt{72.20}{72.68} & \clsraw{72.20}{72.68} & \clsdt{72.20}{72.68} & \clsraw{77.07}{78.05} & \clsdt{77.07}{78.05} & \clsraw{72.20}{72.20} & \clsdt{72.20}{72.20} \\
+        \textit{InsectWingbeat} & \clsraw{70.09}{70.92} & \clsdt{70.09}{70.92} & \clsraw{53.07}{53.56} & \clsdt{53.07}{53.56} & \clsraw{56.11}{58.26} & \clsdt{56.11}{58.26} & \clsraw{63.10}{65.31} & \clsdt{63.10}{65.31} & \clsraw{70.51}{70.54} & \clsdt{70.51}{70.54} & \clsraw{48.13}{48.58} & \clsdt{48.13}{48.58} \\
+        \midrule
+        \textit{JapaneseVowels} & \clsraw{98.38}{98.38} & \clsdt{98.38}{98.38} & \clsraw{91.89}{91.89} & \clsdt{91.89}{91.89} & \clsraw{94.86}{94.86} & \clsdt{94.86}{94.86} & \clsraw{97.03}{97.30} & \clsdt{97.03}{97.30} & \clsraw{97.03}{97.57} & \clsdt{97.03}{97.57} & \clsraw{97.03}{97.03} & \clsdt{97.03}{97.03} \\
+        \textit{Libras} & \clsraw{88.33}{88.33} & \clsdt{88.33}{88.33} & \clsraw{76.67}{78.89} & \clsdt{76.67}{78.89} & \clsraw{77.22}{77.78} & \clsdt{77.22}{77.78} & \clsraw{82.22}{85.56} & \clsdt{82.22}{85.56} & \clsraw{76.67}{78.33} & \clsdt{76.67}{78.33} & \clsraw{75.00}{75.56} & \clsdt{75.00}{75.56} \\
+        \textit{LSST} & \clsraw{58.80}{60.02} & \clsdt{58.80}{60.02} & \clsraw{55.56}{56.49} & \clsdt{55.56}{56.49} & \clsraw{59.41}{61.11} & \clsdt{59.41}{61.11} & \clsraw{56.20}{57.30} & \clsdt{56.20}{57.30} & \clsraw{54.34}{54.34} & \clsdt{54.34}{54.34} & \clsraw{56.20}{56.49} & \clsdt{56.20}{56.49} \\
+        \textit{MotorImagery} & \clsraw{61.00}{67.00} & \clsdt{61.00}{67.00} & \clsraw{61.00}{63.00} & \clsdt{61.00}{63.00} & \clsraw{59.00}{65.00} & \clsdt{59.00}{65.00} & \clsraw{62.00}{62.00} & \clsdt{62.00}{62.00} & \clsraw{66.00}{66.00} & \clsdt{66.00}{66.00} & \clsraw{52.00}{53.00} & \clsdt{52.00}{53.00} \\
+        \textit{NATOPS} & \clsraw{90.00}{91.67} & \clsdt{90.00}{91.67} & \clsraw{74.44}{77.22} & \clsdt{74.44}{77.22} & \clsraw{82.78}{83.33} & \clsdt{82.78}{83.33} & \clsraw{91.67}{93.33} & \clsdt{91.67}{93.33} & \clsraw{95.56}{95.56} & \clsdt{95.56}{95.56} & \clsraw{82.22}{87.78} & \clsdt{82.22}{87.78} \\
+        \textit{PenDigits} & \clsraw{97.97}{98.17} & \clsdt{97.97}{98.17} & \clsraw{97.14}{97.60} & \clsdt{97.14}{97.60} & \clsraw{98.60}{98.77} & \clsdt{98.60}{98.77} & \clsraw{98.08}{98.17} & \clsdt{98.08}{98.17} & \clsraw{98.54}{99.03} & \clsdt{98.54}{99.03} & \clsraw{98.14}{98.17} & \clsdt{98.14}{98.17} \\
+        \textit{PEMS-SF} & \clsraw{87.86}{89.60} & \clsdt{87.86}{89.60} & \clsraw{84.97}{88.44} & \clsdt{84.97}{88.44} & \clsraw{87.28}{90.75} & \clsdt{87.28}{90.75} & \clsraw{80.35}{83.82} & \clsdt{80.35}{83.82} & \clsraw{74.45}{75.72} & \clsdt{74.45}{75.72} & \clsraw{64.16}{68.79} & \clsdt{64.16}{68.79} \\
+        \textit{PhonemeSpectra} & \clsraw{11.03}{11.27} & \clsdt{11.03}{11.27} & \clsraw{11.15}{11.84} & \clsdt{11.15}{11.84} & \clsraw{13.42}{13.81} & \clsdt{13.42}{13.81} & \clsraw{10.83}{11.90} & \clsdt{10.83}{11.90} & \clsraw{30.96}{32.12} & \clsdt{30.96}{32.12} & \clsraw{16.22}{19.48} & \clsdt{16.22}{19.48} \\
+        \textit{RacketSports} & \clsraw{80.92}{82.24} & \clsdt{80.92}{82.24} & \clsraw{78.95}{78.95} & \clsdt{78.95}{78.95} & \clsraw{83.55}{84.21} & \clsdt{83.55}{84.21} & \clsraw{76.97}{77.63} & \clsdt{76.97}{77.63} & \clsraw{90.79}{90.79} & \clsdt{90.79}{90.79} & \clsraw{75.00}{76.32} & \clsdt{75.00}{76.32} \\
+        \textit{SelfRegulationSCP1} & \clsraw{92.15}{92.83} & \clsdt{92.15}{92.83} & \clsraw{82.25}{83.96} & \clsdt{82.25}{83.96} & \clsraw{80.20}{82.59} & \clsdt{80.20}{82.59} & \clsraw{91.13}{92.83} & \clsdt{91.13}{92.83} & \clsraw{87.71}{87.71} & \clsdt{87.71}{87.71} & \clsraw{54.95}{56.66} & \clsdt{54.95}{56.66} \\
+        \textit{SelfRegulationSCP2} & \clsraw{58.33}{60.56} & \clsdt{58.33}{60.56} & \clsraw{54.44}{55.00} & \clsdt{54.44}{55.00} & \clsraw{53.89}{53.89} & \clsdt{53.89}{53.89} & \clsraw{55.56}{56.11} & \clsdt{55.56}{56.11} & \clsraw{58.33}{59.44} & \clsdt{58.33}{59.44} & \clsraw{58.33}{58.89} & \clsdt{58.33}{58.89} \\
+        \textit{SpokenArabicDigits} & \clsraw{98.45}{98.64} & \clsdt{98.45}{98.64} & \clsraw{97.36}{97.50} & \clsdt{97.36}{97.50} & \clsraw{99.45}{99.50} & \clsdt{99.45}{99.50} & \clsraw{98.41}{98.73} & \clsdt{98.41}{98.73} & \clsraw{99.73}{99.82} & \clsdt{99.73}{99.82} & \clsraw{98.27}{98.73} & \clsdt{98.27}{98.73} \\
+        \textit{StandWalkJump} & \clsraw{40.00}{40.00} & \clsdt{40.00}{40.00} & \clsraw{46.67}{53.33} & \clsdt{46.67}{53.33} & \clsraw{40.00}{73.33} & \clsdt{40.00}{73.33} & \clsraw{46.67}{46.67} & \clsdt{46.67}{46.67} & \clsraw{40.00}{60.00} & \clsdt{40.00}{60.00} & \clsraw{46.67}{46.67} & \clsdt{46.67}{46.67} \\
+        \textit{UWaveGestureLibrary} & \clsraw{87.19}{87.50} & \clsdt{87.19}{87.50} & \clsraw{85.31}{85.62} & \clsdt{85.31}{85.62} & \clsraw{84.38}{84.69} & \clsdt{84.38}{84.69} & \clsraw{84.69}{85.62} & \clsdt{84.69}{85.62} & \clsraw{90.00}{90.94} & \clsdt{90.00}{90.94} & \clsraw{80.94}{84.38} & \clsdt{80.94}{84.38} \\
+        \textit{HAR} & \clsraw{94.54}{95.22} & \clsdt{94.54}{95.22} & \clsraw{83.64}{83.85} & \clsdt{83.64}{83.85} & \clsraw{86.87}{89.38} & \clsdt{86.87}{89.38} & \clsraw{93.55}{94.10} & \clsdt{93.55}{94.10} & \clsraw{94.44}{95.01} & \clsdt{94.44}{95.01} & \clsraw{93.04}{93.08} & \clsdt{93.04}{93.08} \\
+        \textit{Sleep-EDF} & \clsraw{80.19}{80.43} & \clsdt{80.19}{80.43} & \clsraw{87.37}{87.54} & \clsdt{87.37}{87.54} & \clsraw{86.09}{86.40} & \clsdt{86.09}{86.40} & \clsraw{82.35}{83.17} & \clsdt{82.35}{83.17} & \clsraw{89.42}{89.58} & \clsdt{89.42}{89.58} & \clsraw{85.60}{86.21} & \clsdt{85.60}{86.21} \\
+        \midrule
+        \rowcolor{TableSummary}
+        \multicolumn{13}{c}{\textbf{Overall (192 pairs):} Accuracy $68.82\% \rightarrow$ \tablegain{70.91\%} (\tablegain{$2.09\,\mathrm{pp}\,\uparrow$}); W/T/L = \textbf{158/34/0}} \\
+        \bottomrule
+    \end{tabular}%
+    }
+    \vspace{-1em}
+\end{table*}

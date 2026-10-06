@@ -1,0 +1,72 @@
+\begin{table*}[!t]
+    \centering
+    \caption{Point-adjusted anomaly-detection precision (P), recall (R), and F1 scores across four datasets (\%). Shaded +DT rows denote \method; bold marks higher values per pair. Avg. $\Delta$F1 reports macro-averaged F1 gains in percentage points (pp).}
+    \label{tab:anomaly_detection_results}
+    \scriptsize
+    \setlength{\tabcolsep}{3.0pt}
+    \renewcommand{\arraystretch}{1.05}
+    \providecommand{\adfraw}[2]{%
+        \ifdim#1pt>#2pt \textbf{#1}\else
+            \ifdim#1pt<#2pt \underline{#1}\else \textbf{#1}\fi
+        \fi
+    }
+    \providecommand{\adfdt}[2]{%
+        \ifdim#2pt>#1pt \textbf{#2}\else
+            \ifdim#2pt<#1pt \underline{#2}\else \textbf{#2}\fi
+        \fi
+        \tableppchange{#1}{#2}%
+    }
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}l c *{7}{c >{\columncolor{TableOurs}}c}@{}}
+        \toprule
+        \rowcolor{TableHeader}
+        \multirow{2}{*}{\textbf{Dataset}} &
+        \multirow{2}{*}{\textbf{Metric}} &
+        \multicolumn{2}{c}{\textbf{PatchTST}} &
+        \multicolumn{2}{c}{\textbf{iTransformer}} &
+        \multicolumn{2}{c}{\textbf{NSFormer}} &
+        \multicolumn{2}{c}{\textbf{AnomTrans}} &
+        \multicolumn{2}{c}{\textbf{TranAD}} &
+        \multicolumn{2}{c}{\textbf{DCdetector}} &
+        \multicolumn{2}{c}{\textbf{TimesNet}} \\
+        \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10}
+        \cmidrule(lr){11-12} \cmidrule(lr){13-14} \cmidrule(lr){15-16}
+        \rowcolor{TableSubheader}
+        & & Raw & \tableoursheader +DT & Raw & \tableoursheader +DT & Raw & \tableoursheader +DT &
+        Raw & \tableoursheader +DT & Raw & \tableoursheader +DT & Raw & \tableoursheader +DT & Raw & \tableoursheader +DT \\
+        \midrule
+        \multirow{3}{*}{\textit{SMD} (\%)}
+        & P  & \adfraw{44.74}{70.27} & \adfdt{44.74}{70.27} & \adfraw{53.71}{79.98} & \adfdt{53.71}{79.98} & \adfraw{63.71}{67.10} & \adfdt{63.71}{67.10} & \adfraw{66.01}{66.06} & \adfdt{66.01}{66.06} & \adfraw{60.78}{70.86} & \adfdt{60.78}{70.86} & \adfraw{66.63}{66.17} & \adfdt{66.63}{66.17} & \adfraw{44.78}{45.66} & \adfdt{44.78}{45.66} \\
+        & R  & \adfraw{99.04}{96.80} & \adfdt{99.04}{96.80} & \adfraw{99.35}{86.84} & \adfdt{99.35}{86.84} & \adfraw{78.52}{79.61} & \adfdt{78.52}{79.61} & \adfraw{84.97}{85.16} & \adfdt{84.97}{85.16} & \adfraw{84.99}{83.63} & \adfdt{84.99}{83.63} & \adfraw{83.15}{84.46} & \adfdt{83.15}{84.46} & \adfraw{99.92}{99.92} & \adfdt{99.92}{99.92} \\
+        & F1 & \adfraw{61.64}{81.43} & \adfdt{61.64}{81.43} & \adfraw{69.73}{83.27} & \adfdt{69.73}{83.27} & \adfraw{70.34}{72.82} & \adfdt{70.34}{72.82} & \adfraw{74.30}{74.40} & \adfdt{74.30}{74.40} & \adfraw{70.87}{76.72} & \adfdt{70.87}{76.72} & \adfraw{73.98}{74.20} & \adfdt{73.98}{74.20} & \adfraw{61.85}{62.68} & \adfdt{61.85}{62.68} \\
+        \midrule
+        \multirow{3}{*}{\textit{MSL} (\%)}
+        & P  & \adfraw{72.93}{88.19} & \adfdt{72.93}{88.19} & \adfraw{83.01}{88.22} & \adfdt{83.01}{88.22} & \adfraw{55.96}{70.44} & \adfdt{55.96}{70.44} & \adfraw{45.14}{59.26} & \adfdt{45.14}{59.26} & \adfraw{66.08}{67.18} & \adfdt{66.08}{67.18} & \adfraw{74.01}{74.69} & \adfdt{74.01}{74.69} & \adfraw{86.48}{88.72} & \adfdt{86.48}{88.72} \\
+        & R  & \adfraw{91.09}{77.61} & \adfdt{91.09}{77.61} & \adfraw{38.93}{76.18} & \adfdt{38.93}{76.18} & \adfraw{45.72}{86.64} & \adfdt{45.72}{86.64} & \adfraw{4.27}{96.77} & \adfdt{4.27}{96.77} & \adfraw{34.02}{72.33} & \adfdt{34.02}{72.33} & \adfraw{82.65}{92.64} & \adfdt{82.65}{92.64} & \adfraw{53.70}{94.94} & \adfdt{53.70}{94.94} \\
+        & F1 & \adfraw{81.00}{82.56} & \adfdt{81.00}{82.56} & \adfraw{53.00}{81.76} & \adfdt{53.00}{81.76} & \adfraw{50.32}{77.70} & \adfdt{50.32}{77.70} & \adfraw{7.80}{73.50} & \adfdt{7.80}{73.50} & \adfraw{44.92}{69.66} & \adfdt{44.92}{69.66} & \adfraw{78.09}{82.70} & \adfdt{78.09}{82.70} & \adfraw{66.26}{91.73} & \adfdt{66.26}{91.73} \\
+        \midrule
+        \multirow{3}{*}{\textit{SMAP} (\%)}
+        & P  & \adfraw{77.96}{61.93} & \adfdt{77.96}{61.93} & \adfraw{59.78}{65.70} & \adfdt{59.78}{65.70} & \adfraw{75.35}{78.72} & \adfdt{75.35}{78.72} & \adfraw{74.52}{67.77} & \adfdt{74.52}{67.77} & \adfraw{73.69}{60.67} & \adfdt{73.69}{60.67} & \adfraw{62.34}{76.64} & \adfdt{62.34}{76.64} & \adfraw{52.26}{72.53} & \adfdt{52.26}{72.53} \\
+        & R  & \adfraw{60.89}{85.92} & \adfdt{60.89}{85.92} & \adfraw{57.70}{76.54} & \adfdt{57.70}{76.54} & \adfraw{44.06}{84.76} & \adfdt{44.06}{84.76} & \adfraw{81.12}{99.93} & \adfdt{81.12}{99.93} & \adfraw{62.93}{91.14} & \adfdt{62.93}{91.14} & \adfraw{92.43}{97.10} & \adfdt{92.43}{97.10} & \adfraw{94.06}{94.06} & \adfdt{94.06}{94.06} \\
+        & F1 & \adfraw{68.38}{71.98} & \adfdt{68.38}{71.98} & \adfraw{58.72}{70.71} & \adfdt{58.72}{70.71} & \adfraw{55.61}{81.63} & \adfdt{55.61}{81.63} & \adfraw{77.68}{80.77} & \adfdt{77.68}{80.77} & \adfraw{67.88}{72.85} & \adfdt{67.88}{72.85} & \adfraw{74.46}{85.67} & \adfdt{74.46}{85.67} & \adfraw{67.19}{81.90} & \adfdt{67.19}{81.90} \\
+        \midrule
+        \multirow{3}{*}{\textit{PSM} (\%)}
+        & P  & \adfraw{97.08}{97.93} & \adfdt{97.08}{97.93} & \adfraw{99.65}{98.60} & \adfdt{99.65}{98.60} & \adfraw{99.18}{99.68} & \adfdt{99.18}{99.68} & \adfraw{100.00}{99.98} & \adfdt{100.00}{99.98} & \adfraw{99.97}{99.88} & \adfdt{99.97}{99.88} & \adfraw{100.00}{100.00} & \adfdt{100.00}{100.00} & \adfraw{93.12}{94.71} & \adfdt{93.12}{94.71} \\
+        & R  & \adfraw{90.92}{98.23} & \adfdt{90.92}{98.23} & \adfraw{83.24}{93.77} & \adfdt{83.24}{93.77} & \adfraw{71.54}{84.44} & \adfdt{71.54}{84.44} & \adfraw{71.55}{76.59} & \adfdt{71.55}{76.59} & \adfraw{65.61}{69.71} & \adfdt{65.61}{69.71} & \adfraw{63.63}{76.56} & \adfdt{63.63}{76.56} & \adfraw{99.94}{99.94} & \adfdt{99.94}{99.94} \\
+        & F1 & \adfraw{93.90}{98.08} & \adfdt{93.90}{98.08} & \adfraw{90.71}{96.13} & \adfdt{90.71}{96.13} & \adfraw{83.12}{91.43} & \adfdt{83.12}{91.43} & \adfraw{83.42}{86.73} & \adfdt{83.42}{86.73} & \adfraw{79.23}{82.12} & \adfdt{79.23}{82.12} & \adfraw{77.77}{86.72} & \adfdt{77.77}{86.72} & \adfraw{96.41}{97.25} & \adfdt{96.41}{97.25} \\
+        \midrule
+        \multicolumn{2}{l}{\textbf{Avg. $\Delta$F1}} &
+        \multicolumn{2}{c}{\tablegain{$7.28\,\mathrm{pp}\,\uparrow$}} &
+        \multicolumn{2}{c}{\tablegain{$14.93\,\mathrm{pp}\,\uparrow$}} &
+        \multicolumn{2}{c}{\tablegain{$16.05\,\mathrm{pp}\,\uparrow$}} &
+        \multicolumn{2}{c}{\tablegain{$18.05\,\mathrm{pp}\,\uparrow$}} &
+        \multicolumn{2}{c}{\tablegain{$9.61\,\mathrm{pp}\,\uparrow$}} &
+        \multicolumn{2}{c}{\tablegain{$6.25\,\mathrm{pp}\,\uparrow$}} &
+        \multicolumn{2}{c}{\tablegain{$10.46\,\mathrm{pp}\,\uparrow$}} \\
+        \rowcolor{TableSummary}
+        \multicolumn{16}{c}{\textbf{Overall (28 dataset--backbone pairs):} Macro F1 $69.23\% \rightarrow$ \tablegain{81.04\%};
+        \tablegain{$11.80\,\mathrm{pp}\,\uparrow$}; W/T/L = \textbf{28/0/0}} \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table*}

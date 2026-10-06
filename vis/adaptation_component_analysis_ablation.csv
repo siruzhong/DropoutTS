@@ -1,0 +1,8 @@
+variant,mse_gain_pct,mae_gain_pct
+Minimal model,-30.6,-14.8
+w/o detrend + norm,-26.7,-12.7
+w/o detrend,-41.7,-21.3
+Simple detrend,-35.8,-18.1
+w/o spectral norm,-12.9,-7.2
+w/o log-SFM anchor,-31.1,-16.0
+DropoutTS,7.2,2.3
